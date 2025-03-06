@@ -39,8 +39,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.btSelectImg2 = new System.Windows.Forms.Button();
-            this.btSelectImg1 = new System.Windows.Forms.Button();
+            this.btSelectImgDir = new System.Windows.Forms.Button();
+            this.btSelectImgMv = new System.Windows.Forms.Button();
             this.pcbDirMovie = new System.Windows.Forms.PictureBox();
             this.pcbMovieImg = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -99,6 +99,7 @@
             this.btExit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btExit.UseVisualStyleBackColor = true;
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
             // btCancel
             // 
@@ -112,6 +113,7 @@
             this.btCancel.Text = "ยกเลิก";
             this.btCancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btCancel.UseVisualStyleBackColor = true;
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
             // btSaveAddEdit
             // 
@@ -125,6 +127,7 @@
             this.btSaveAddEdit.Text = "บันทึก";
             this.btSaveAddEdit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btSaveAddEdit.UseVisualStyleBackColor = true;
+            this.btSaveAddEdit.Click += new System.EventHandler(this.btSaveAddEdit_Click);
             // 
             // btDel
             // 
@@ -138,6 +141,7 @@
             this.btDel.Text = "ลบ";
             this.btDel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btDel.UseVisualStyleBackColor = true;
+            this.btDel.Click += new System.EventHandler(this.btDel_Click);
             // 
             // btEdit
             // 
@@ -151,6 +155,7 @@
             this.btEdit.Text = "แก้ไข";
             this.btEdit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btEdit.UseVisualStyleBackColor = true;
+            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
             // btAdd
             // 
@@ -164,6 +169,7 @@
             this.btAdd.Text = "เพิ่ม";
             this.btAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // label14
             // 
@@ -179,8 +185,8 @@
             // 
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.btSelectImg2);
-            this.groupBox2.Controls.Add(this.btSelectImg1);
+            this.groupBox2.Controls.Add(this.btSelectImgDir);
+            this.groupBox2.Controls.Add(this.btSelectImgMv);
             this.groupBox2.Controls.Add(this.pcbDirMovie);
             this.groupBox2.Controls.Add(this.pcbMovieImg);
             this.groupBox2.Controls.Add(this.label1);
@@ -233,25 +239,27 @@
             this.label15.Text = "รูปผู้กำกับภาพยนต์";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btSelectImg2
+            // btSelectImgDir
             // 
-            this.btSelectImg2.Location = new System.Drawing.Point(421, 280);
-            this.btSelectImg2.Margin = new System.Windows.Forms.Padding(2);
-            this.btSelectImg2.Name = "btSelectImg2";
-            this.btSelectImg2.Size = new System.Drawing.Size(22, 19);
-            this.btSelectImg2.TabIndex = 24;
-            this.btSelectImg2.Text = "...";
-            this.btSelectImg2.UseVisualStyleBackColor = true;
+            this.btSelectImgDir.Location = new System.Drawing.Point(421, 280);
+            this.btSelectImgDir.Margin = new System.Windows.Forms.Padding(2);
+            this.btSelectImgDir.Name = "btSelectImgDir";
+            this.btSelectImgDir.Size = new System.Drawing.Size(22, 19);
+            this.btSelectImgDir.TabIndex = 24;
+            this.btSelectImgDir.Text = "...";
+            this.btSelectImgDir.UseVisualStyleBackColor = true;
+            this.btSelectImgDir.Click += new System.EventHandler(this.btSelectImgDir_Click);
             // 
-            // btSelectImg1
+            // btSelectImgMv
             // 
-            this.btSelectImg1.Location = new System.Drawing.Point(421, 135);
-            this.btSelectImg1.Margin = new System.Windows.Forms.Padding(2);
-            this.btSelectImg1.Name = "btSelectImg1";
-            this.btSelectImg1.Size = new System.Drawing.Size(22, 19);
-            this.btSelectImg1.TabIndex = 23;
-            this.btSelectImg1.Text = "...";
-            this.btSelectImg1.UseVisualStyleBackColor = true;
+            this.btSelectImgMv.Location = new System.Drawing.Point(421, 135);
+            this.btSelectImgMv.Margin = new System.Windows.Forms.Padding(2);
+            this.btSelectImgMv.Name = "btSelectImgMv";
+            this.btSelectImgMv.Size = new System.Drawing.Size(22, 19);
+            this.btSelectImgMv.TabIndex = 23;
+            this.btSelectImgMv.Text = "...";
+            this.btSelectImgMv.UseVisualStyleBackColor = true;
+            this.btSelectImgMv.Click += new System.EventHandler(this.btSelectImgMv_Click);
             // 
             // pcbDirMovie
             // 
@@ -371,6 +379,7 @@
             this.tbMovieDVDPrice.Size = new System.Drawing.Size(146, 20);
             this.tbMovieDVDPrice.TabIndex = 17;
             this.tbMovieDVDPrice.Text = "0.00";
+            this.tbMovieDVDPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbMovieDVDPrice_KeyPress);
             // 
             // label6
             // 
@@ -395,6 +404,15 @@
             // cbbMovieType
             // 
             this.cbbMovieType.FormattingEnabled = true;
+            this.cbbMovieType.Items.AddRange(new object[] {
+            "Action ",
+            "Adventure",
+            "Drama ",
+            "Thriller",
+            "Comedy",
+            "Sci-Fi",
+            "Fantasy",
+            "War"});
             this.cbbMovieType.Location = new System.Drawing.Point(104, 218);
             this.cbbMovieType.Margin = new System.Windows.Forms.Padding(2);
             this.cbbMovieType.Name = "cbbMovieType";
@@ -426,7 +444,7 @@
             this.tbMovieDVDTotal.Name = "tbMovieDVDTotal";
             this.tbMovieDVDTotal.Size = new System.Drawing.Size(33, 20);
             this.tbMovieDVDTotal.TabIndex = 14;
-            this.tbMovieDVDTotal.Text = "0";
+            this.tbMovieDVDTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbMovieDVDTotal_KeyPress);
             // 
             // nudMovieHour
             // 
@@ -504,6 +522,7 @@
             this.btMovieSearch.TabIndex = 22;
             this.btMovieSearch.Text = "ค้นหา";
             this.btMovieSearch.UseVisualStyleBackColor = true;
+            this.btMovieSearch.Click += new System.EventHandler(this.btMovieSearch_Click);
             // 
             // tbMovieSearch
             // 
@@ -523,6 +542,7 @@
             this.rdMovieName.TabIndex = 2;
             this.rdMovieName.Text = "ชื่อภาพยนต์";
             this.rdMovieName.UseVisualStyleBackColor = true;
+            this.rdMovieName.Click += new System.EventHandler(this.rdMovieName_Click);
             // 
             // rdMovieId
             // 
@@ -536,6 +556,7 @@
             this.rdMovieId.TabStop = true;
             this.rdMovieId.Text = "รหัสภาพยนต์";
             this.rdMovieId.UseVisualStyleBackColor = true;
+            this.rdMovieId.Click += new System.EventHandler(this.rdMovieId_Click);
             // 
             // lsMovieShow
             // 
@@ -553,6 +574,7 @@
             this.lsMovieShow.TabIndex = 0;
             this.lsMovieShow.UseCompatibleStateImageBehavior = false;
             this.lsMovieShow.View = System.Windows.Forms.View.Details;
+            this.lsMovieShow.SelectedIndexChanged += new System.EventHandler(this.lsMovieShow_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -577,6 +599,7 @@
             this.Column5});
             this.dgvMovieShowAll.Location = new System.Drawing.Point(45, 384);
             this.dgvMovieShowAll.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvMovieShowAll.MultiSelect = false;
             this.dgvMovieShowAll.Name = "dgvMovieShowAll";
             this.dgvMovieShowAll.ReadOnly = true;
             this.dgvMovieShowAll.RowTemplate.Height = 24;
@@ -634,7 +657,9 @@
             this.Controls.Add(this.dgvMovieShowAll);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMovie";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "จัดการข้อมูลภาพยนต์";
+            this.Load += new System.EventHandler(this.FrmMovie_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbDirMovie)).EndInit();
@@ -660,8 +685,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button btSelectImg2;
-        private System.Windows.Forms.Button btSelectImg1;
+        private System.Windows.Forms.Button btSelectImgDir;
+        private System.Windows.Forms.Button btSelectImgMv;
         private System.Windows.Forms.PictureBox pcbDirMovie;
         private System.Windows.Forms.PictureBox pcbMovieImg;
         private System.Windows.Forms.Label label1;
